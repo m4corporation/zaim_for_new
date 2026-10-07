@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Акция для новых клиентов от Webbankir</title>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=112928603', 'ym');
+
+    ym(112928603, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/112928603" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF; --ink:#1A1A1A; --accent:#ffee5f; --accent-d:#ffc61a;
+    --gold:#ffee5f; --line:rgba(26,26,26,0.12); --grey:#6B6B6B;
+    box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:'Manrope',sans-serif; line-height:1.5;}
+  h1,h2,h3{font-weight:800; line-height:1.05; margin:0; letter-spacing:-0.01em;}
+  p{margin:0;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+  ::selection{background:var(--accent); color:var(--ink);}
+  :focus-visible{outline:3px solid var(--accent); outline-offset:2px;}
+
+  header{padding:20px 0; border-bottom:1px solid var(--line);}
+  .headrow{display:flex; justify-content:space-between; align-items:center; max-width:920px; margin:0 auto; padding:0 24px;}
+  .brand{font-weight:800; font-size:18px;}
+  .brand span{color:var(--accent-d);}
+  .badge{background:var(--accent); color:var(--ink); font:700 12px/1 'Manrope'; padding:8px 14px; border-radius:100px;}
+
+  /* ПСК — обычная строка на фоне, но крупная и читаемая */
+  .psk-header{
+    padding:24px 24px 0;
+    text-align:left;
+  }
+  .psk-header p{
+    font:800 clamp(32px,5.5vw,52px)/1.1 'Manrope';
+    max-width:920px; margin:0 auto; letter-spacing:-0.01em; color:var(--ink);
+  }
+
+  .hero{padding:40px 0 40px;}
+  .eyebrow-badge{display:inline-block; background:var(--accent); color:var(--ink); font:700 13px/1 'Manrope'; padding:8px 14px; border-radius:100px; margin-bottom:18px;}
+  .hero h1{font-size:clamp(32px,5.5vw,52px); max-width:680px;}
+  .hero h1 em{font-style:normal; color:var(--accent-d);}
+  .hero-sub{color:var(--grey); max-width:520px; margin-top:16px; font-size:17px;}
+
+  /* GATE */
+  .gate{background:#FFFFFF; border:1px solid var(--line); border-radius:20px; padding:28px; margin-top:32px; max-width:520px; box-shadow:0 4px 20px rgba(0,0,0,0.04);}
+  .gate-q{font-weight:700; font-size:17px; margin-bottom:16px;}
+  .gate-btns{display:flex; gap:12px;}
+  .gate-btn{
+    flex:1; padding:14px; border-radius:12px; border:1.5px solid var(--line); background:transparent;
+    color:var(--ink); font:700 15px/1 'Manrope'; cursor:pointer;
+  }
+  .gate-btn.yes:hover{border-color:var(--grey);}
+  .gate-btn.no{background:var(--accent); border-color:var(--accent); color:var(--ink);}
+  .gate-btn.no:hover{background:var(--accent-d);}
+  .gate-result{padding:8px 4px 0; font-size:14px; color:var(--grey); display:none;}
+  .gate-result.show{display:block;}
+
+  .locked{filter:blur(0px); transition:opacity 0.3s;}
+  .locked.disabled{opacity:0.35; pointer-events:none;}
+
+  .section{padding-top:48px; padding-bottom:48px; border-top:1px solid var(--line);}
+  .section h2{font-size:clamp(24px,3.5vw,32px); margin-bottom:28px;}
+
+  .cond-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  @media (max-width:600px){.cond-grid{grid-template-columns:1fr;}}
+  .cond-card{background:#FFFFFF; border:1px solid var(--line); border-radius:16px; padding:22px; box-shadow:0 2px 12px rgba(0,0,0,0.03);}
+  .cond-num{font-size:26px; font-weight:800; color:var(--ink);}
+  .cond-label{color:var(--grey); font-size:14px; margin-top:6px;}
+  .cond-card.highlight{background:var(--accent); color:var(--ink); border-color:var(--accent);}
+  .cond-card.highlight .cond-num{color:var(--ink);}
+  .cond-card.highlight .cond-label{color:rgba(26,26,26,0.7);}
+
+  .steps{display:flex; flex-direction:column; gap:0;}
+  .step{display:flex; gap:20px; padding:20px 0; border-bottom:1px solid var(--line);}
+  .step:last-child{border-bottom:none;}
+  .step-num{
+    width:38px; height:38px; border-radius:100px; background:var(--accent); color:var(--ink);
+    display:flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0;
+  }
+  .step-title{font-weight:700; font-size:16px;}
+  .step-desc{color:var(--grey); font-size:14px; margin-top:4px;}
+
+  .cta-block{
+    background:var(--accent); color:var(--ink); border-radius:24px; padding:40px 32px; text-align:center; margin:8px 0;
+  }
+  .cta-block h2{color:var(--ink); font-size:clamp(24px,4vw,34px);}
+  .cta-block p{color:rgba(26,26,26,0.75); margin-top:12px; max-width:420px; margin-left:auto; margin-right:auto;}
+  .cta-btn{
+    display:inline-block; margin-top:24px; background:var(--ink); color:#FFFFFF; border:none;
+    padding:17px 36px; border-radius:100px; font:800 16px/1 'Manrope'; cursor:pointer; text-decoration:none;
+  }
+  .cta-btn:hover{background:#000000;}
+  .cta-note{color:rgba(26,26,26,0.5); font-size:12px; margin-top:14px;}
+
+  /* Обязательные предупреждения ПОД кнопкой */
+  .warnings{
+    margin-top:22px; padding-top:20px; border-top:1px solid rgba(26,26,26,0.15);
+    color:var(--ink); font:300 15px/1.5 'Manrope';
+    opacity: 60%;
+  }
+  .warnings a{color:var(--ink); font-weight:800;}
+
+  .disclosure{background:#FFFFFF; border:1px solid var(--line); border-radius:16px; padding:24px; font-size:13px; color:var(--grey);}
+  .disclosure b{color:var(--ink);}
+  .disclosure p + p{margin-top:10px;}
+
+  footer{padding:32px 24px 40px; border-top:1px solid var(--line);}
+  footer p{color:var(--grey); font-size:12px; max-width:920px; margin:0 auto 8px;}
+
+  .cookie-banner{position:fixed;left:20px;right:20px;bottom:20px;z-index:9999;max-width:920px;margin:0 auto;padding:18px 20px;background:#1A1A1A;color:#fff;border-radius:16px;box-shadow:0 10px 35px rgba(0,0,0,.22);display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .cookie-banner.hidden{display:none}
+  .cookie-text{font-size:13px;line-height:1.45;color:rgba(255,255,255,.88)}
+  .cookie-text a{color:#7d9aff}
+  .cookie-btn{flex-shrink:0;background:#5b7cfa;color:#fff;border:none;padding:.6rem 1.3rem;border-radius:40px;font:700 14px/1 'Manrope',sans-serif;cursor:pointer}
+  @media (max-width:600px){.cookie-banner{left:12px;right:12px;bottom:12px;padding:15px;flex-direction:column;align-items:stretch;gap:12px}.cookie-btn{width:100%}}
+</style>
+</head>
+<body>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Уведомление об использовании cookie">
+    <div class="cookie-text">
+      Мы используем cookie и похожие технологии для аналитики и учёта рекламных переходов.
+      Подробнее — в <a href="https://m4corporation.github.io/wallet_pick/privacy.html">политике конфиденциальности</a>.
+    </div>
+    <button id="cookieAcceptBtn" class="cookie-btn" type="button">Понятно</button>
+  </div>
+
+
+<header>
+  <div class="headrow">
+    <div class="brand">Акция от Webbankir</div>
+    <div class="badge">0% до 21 дня</div>
+  </div>
+</header>
+
+<!-- ПСК: обычный фон, крупный читаемый шрифт, ДО ставки -->
+<div class="psk-header">
+  <p>ПСК: 0–292%</p>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <span class="eyebrow-badge">Онлайн-займы без визитов в офис</span>
+    <h1>Первый заём — <em>0% до 21 дня</em>, до 30 000 ₽</h1>
+    <p class="hero-sub">Если вы ещё не оформляли заём в Webbankir — это предложение для вас. Деньги на карту в день обращения, решение за пару минут.</p>
+
+    <div class="gate">
+      <div class="gate-q">Уже брали заём в Webbankir раньше?</div>
+      <div class="gate-btns">
+        <button class="gate-btn yes" onclick="setGate(true)">Да, брал(а)</button>
+        <button class="gate-btn no" onclick="setGate(false)">Нет, я новый клиент</button>
+      </div>
+      <div class="gate-result" id="gateResult"></div>
+    </div>
+  </div>
+</div>
+
+<div id="lockedContent" class="locked disabled">
+
+  <div class="section wrap">
+    <h2>Условия займа для новых клиентов «0% до 21 дня»</h2>
+    <div class="cond-grid">
+      <div class="cond-card highlight">
+        <div class="cond-num">0%</div>
+        <div class="cond-label">ставка до 21 дня пользования займом (до 30 000 ₽)</div>
+      </div>
+      <div class="cond-card">
+        <div class="cond-num">1000 – 30 000 ₽</div>
+        <div class="cond-label">сумма займа для новых клиентов</div>
+      </div>
+      <div class="cond-card">
+        <div class="cond-num">до 21 дней</div>
+        <div class="cond-label">срок займа на выбор</div>
+      </div>
+      <div class="cond-card">
+        <div class="cond-num">от 20 лет</div>
+        <div class="cond-label">минимальный возраст заёмщика</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section wrap">
+    <h2>Как получить деньги</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Оставляете заявку онлайн</div>
+          <div class="step-desc">Паспортные данные и номер карты — заполнение занимает пару минут.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">Получаете решение</div>
+          <div class="step-desc">Система моментального электронного кредитования рассматривает заявку автоматически.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">Деньги приходят на карту</div>
+          <div class="step-desc">При одобрении сумма поступает на карту в течение 24 часов.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="cta-block">
+      <h2>Готовы оформить заём онлайн?</h2>
+      <p>Без посещения офиса. Решение — онлайн, деньги — на карту в течение 24 часов.</p>
+      <a class="cta-btn" href="#offer-link-placeholder" id="ctaLink">Перейти к оформлению</a>
+
+      <!-- Обязательные предупреждения ФЗ-479 — под кнопкой -->
+      <div class="warnings">
+        Реклама. Оценивайте свои финансовые возможности и риски.<br>
+        Изучите все условия кредита (займа) на официальном сайте.
+      </div>
+    </div>
+  </div>
+
+  <div class="section wrap">
+    <div class="disclosure">
+      <p><b>Важная информация.</b> ООО МКК «ВЭББАНКИР» — регистрационный номер в реестре МФО указывается на сайте кредитора. Система моментального электронного кредитования предоставляет онлайн-займы без посещения офиса. Ставка 0% действует на срок до 21 дня при сумме займа до 30 000 ₽.</p>
+      <p>Полная стоимость кредита (ПСК): <b>0–292% годовых</b>. Диапазон суммы займа: от 1 000 до 100 000 ₽, срок — от 7 до 365 дней. Минимальный возраст заёмщика — от 20 лет. Точные условия зависят от результатов скоринга и определяются индивидуально. ПСК не может превышать 292% годовых.</p>
+      <p>Заём — это финансовое обязательство. Оценивайте свою платёжеспособность перед оформлением. Данная страница является информационным материалом и не является офертой; окончательные условия предоставляются кредитором на его официальном сайте.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Материал носит информационный характер. Актуальные условия, тарифы и реквизиты кредитора — на официальном сайте ВЭББАНКИР.</p>
+  <p><a href="privacy.html" style="color:inherit;font-weight:700;">Политика конфиденциальности</a></p>
+  <p><a href="privacy.html#cookies" style="color:inherit;">Использование cookie и аналитики</a></p>
+</footer>
+
+<script>
+  // ========================================================
+  // РЕАЛЬНАЯ ССЫЛКА НА ОФФЕР WEBBANKIR
+  // ЗАМЕНИТЕ на точный URL с актуальным erid из личного кабинета FCN —
+  // тот, что был в HTML (offer_id 918), принадлежит BelkaCredit, не Webbankir!
+  // ========================================================
+  const OFFER_LINK = 'https://t.fincpanetwork.ru/click/64288/77?erid=2W5zFHR4ffP';
+
+  // ========================================================
+  // ЗАХВАТ РЕКЛАМНЫХ МЕТОК ИЗ URL — та же логика, что на витрине
+  // ========================================================
+  (function captureTrackingParams() {
+    const params = new URLSearchParams(window.location.search);
+    const map = {
+      region_name: params.get('region') || params.get('utm_term') || '',
+      ad_id: params.get('ad_id') || '',
+      keyword: params.get('keyword') || params.get('utm_content') || '',
+      yclid: params.get('yclid') || '',
+      campaign_id: params.get('campaign_id') || params.get('utm_campaign') || ''
+    };
+    Object.keys(map).forEach(key => {
+      if (map[key]) {
+        try { localStorage.setItem(key, map[key]); } catch (e) {}
+      }
+    });
+    // ClientID Метрики — считываем через API счётчика, как только он проинициализируется
+    if (typeof ym === 'function') {
+      ym(112928603, 'getClientID', function(clientID) {
+        try { localStorage.setItem('client_id', clientID); } catch (e) {}
+      });
+    }
+  })();
+
+  function setGate(isReturning){
+    const content = document.getElementById('lockedContent');
+    const result = document.getElementById('gateResult');
+    result.classList.add('show');
+    if(isReturning){
+      content.classList.add('disabled');
+      result.innerHTML = 'Это предложение действует для новых клиентов. Актуальные условия для постоянных клиентов уточняйте в личном кабинете на официальном сайте ВЭББАНКИР.';
+      if (typeof ym === 'function') ym(112928603, 'reachGoal', 'webbankir_landing_gate_returning');
+    } else {
+      content.classList.remove('disabled');
+      result.innerHTML = 'Отлично, предложение доступно — условия ниже 👇';
+      content.scrollIntoView({behavior:'smooth', block:'start'});
+      if (typeof ym === 'function') ym(112928603, 'reachGoal', 'webbankir_landing_gate_new'); // вспомогательная цель, НЕ NEW-клиент
+    }
+  }
+
+  // ========================================================
+  // КЛИК ПО КНОПКЕ — цель в Метрике + подстановка sub-параметров
+  // ========================================================
+  document.getElementById('ctaLink').addEventListener('click', function(event) {
+    event.preventDefault();
+    if (typeof ym === 'function') ym(112928603, 'reachGoal', 'webbankir_landing_click');
+
+    try {
+      const url = new URL(OFFER_LINK);
+      ['region_name:sub1', 'ad_id:sub2', 'keyword:sub3', 'client_id:sub4', 'yclid:sub5', 'campaign_id:sub6'].forEach(pair => {
+        const [key, sub] = pair.split(':');
+        const val = localStorage.getItem(key);
+        if (val) url.searchParams.set(sub, val);
+      });
+      window.open(url.toString(), '_blank');
+    } catch (err) {
+      window.open(OFFER_LINK, '_blank');
+    }
+  });
+</script>
+
+
+<script>
+(function(){
+  const banner = document.getElementById('cookieBanner');
+  const btn = document.getElementById('cookieAcceptBtn');
+  if (!banner || !btn) return;
+
+  if (localStorage.getItem('cookieNoticeAccepted') === '1') {
+    banner.classList.add('hidden');
+  }
+
+  btn.addEventListener('click', function(){
+    localStorage.setItem('cookieNoticeAccepted', '1');
+    banner.classList.add('hidden');
+  });
+})();
+</script>
+
+</body>
+</html>
